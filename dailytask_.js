@@ -92,163 +92,116 @@ const person = [
     }
   ]
 
-// 1) print person yang suka buah apple dan warna mata nya biru
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr=[]
+//   1) print person yang suka buah apple dan warna mata nya biru
+console.log("-------------------------------1.) person yang suka buah apple dan warna mata nya biru-----------------------------");
 
-for(let i = 0; i < person.length; i++) {
-    if(person[i].favoriteFruit === "apple" && person[i].eyeColor === "blue") {
-        arr.push(person[i])
+for(let i = 0; i < person.length; i++){
+    if (person[i].favoriteFruit === "apple" && person[i].eyeColor === "blue"){
+        console.table(person[i])
     }
 }
-console.log("No.1 person yang suka makan buah apple dan warna nya mata biru ada =" + arr.length);
-console.table(arr);
-
-
-
-
 
 
 // 2) print berapa person yang age nya diatas 30
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr2=[]
+console.log("-----------------------------------2.) person yang age nya diatas 30---------------------------------------");
 
-for (let i = 0; i < person.length; i++) {
-    if (person[i].age > 30) {
-        arr2.push(person[i])
+for(let i = 0; i < person.length; i++){
+    if (person[i].age > 30){
+        console.table(person[i])
     }
 }
-console.log("No.2 person yang age nya diatas 30 ada = " + arr2.length);
-console.table(arr2);
-
-
-
 
 
 
 // 3) print person yang isActive true and  gender nya female
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 3~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr3=[]
+console.log("------------------------------------------3.) person yang isActive true and  gender nya female-------------------------------");
 
-for (let i=0 ; i < person.length; i++) {
-    if (person[i].isActive === true && person[i].gender === "female") {
-    arr3.push(person[i])        
+for(let i = 0; i < person.length; i++){
+    if (person[i].isActive === true  ){
+        console.table(person[i])
     }
 }
-console.log("No.3person yang isActive true  dan gender nya female ada = " + arr3.length);
-console.table(arr3);
+
+
+// 4) print yang age nya diatas 30 atau dibawah 25 dan eyeColor nya blue
+console.log("----------------------------4.) print yang age nya diatas 30 atau dibawah 25 dan eyeColor nya blue---------------------------------------");
+
+for(let i = 0; i < person.length; i++){
+    if ((person[i].age > 30 || person[i].age < 25) && person[i].eyeColor === "blue" ){
+        console.table(person[i])
+    }
+}
+
+
+// 5) print person yang mengandung huruf W di name nya
+console.log("------------------------------------------5.) print person yang mengandung huruf W di name nya ----------------------------------------------"); 
+// //cara 1 menggunakan include untuk memeriksa setiap string dan UpperCae untuk membuat huruf menjadi kapital 
+for(let i = 0; i < person.length; i++){
+  if (person[i].name.toUpperCase().includes('W')){
+      console.table(person[i])
+  }
+}
 
 
 
-
-
-
-// 4) print yang age nya diatas 30 atau dibawah 25 dan eyeColor nya blue 
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr4=[]
+//cara 2 menggunakan nested for
 for (let i = 0; i < person.length; i++) {
-    if ((person[i].age > 30 || person[i].age < 25) && person[i].eyeColor === "blue") {
-        arr4.push(person[i])
+  for (let j = 0; j < person[i].name.length; j++) {
+    if (person[i].name[j].toUpperCase() === "W") {
+      console.table(person[i]);
     }
+  }
 }
-console.log("No.4 person yang age nya diatas 30 atau dibawah 25 dan eyeColor nya blue ada = " + arr4.length);
-console.table(arr4);
-
-
-
-
-
-
-// 5) print person yang mengandung huruf W di name nya 
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 5~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr5=[]
-for (let i = 0; i < person.length; i++) {
-    if (person[i].name.includes('W')){
-        arr5.push(person[i])
-    }
-}
-console.log("No.5 person yang mengandung huruf W di name nya = " + arr5.length);
-console.table(arr5);
-
-
-
 
 
 
 // 6) print person isActive false dan gender nya male dan age nya diatas 25 
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 6~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr6=[]
-for (let i = 0; i < person.length; i++) {
+console.log("--------------------------------------------------6.) print person isActive false dan gender nya male dan age nya diatas 25 -----------------------------------");
+
+for(let i = 0; i < person.length; i++){
     if (person[i].isActive === false && person[i].gender === "male" && person[i].age > 25 ){
-        arr6.push(person[i])
+        console.table(person[i])
     }
 }
-console.log("No.6 person isActive false dan gender nya male dan age nya diatas 25  = " + arr6.length);
-console.table(arr6);
-
-
-
-
 
 
 // 7) print person age nya dibawah 30 atau eyeColor brown dan favoritFruit nya banana 
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 7~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr7=[]
+console.log("------------------------------------7) print person age nya dibawah 30 atau eyeColor brown dan favoritFruit nya banana --------------------------------------");
+
 for(let i = 0; i < person.length; i++){
     if ((person[i].age < 30 || person[i].eyeColor === "brown") && person[i].favoriteFruit === "banana" ){
-        arr7.push(person[i])
+        console.table(person[i])
     }
 }
-console.log("No.7 person age nya dibawah 30 atau eyeColor brown dan favoritFruit nya banana ada = " + arr7.length);
-console.table(arr7);
 
 
+// 8) print person gender male
+console.log("-----------------------------------------------------8) print person gender male-----------------------------------------------");
 
-
-
-
-// 8) print person gender male 
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 8~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr8=[]
 for(let i = 0; i < person.length; i++){
     if (person[i].gender === "male" ){
-        arr8.push(person[i])
+        console.table(person[i])
     }
 }
-console.log("No.8 person gender male  ada = " + arr8.length);
-console.table(arr8);
 
 
 
+// 9) print person eyeColor Blue
+console.log("------------------------------------------------------9) print person eyeColor Blue--------------------------------------------------");
 
-
-
-
-// 9) print person eyeColor Blue 
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 9~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr9=[]
 for(let i = 0; i < person.length; i++){
     if (person[i].eyeColor === "blue" ){
-        arr9.push(person[i])
+        console.table(person[i])
     }
 }
-console.log("No.9 person eyeColor Blue  ada = " + arr9.length);
-console.table(arr9);
-
-
-
-
 
 
 
 // 10) print person age diatas 30
-console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOMOR 10~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-let arr10=[]
+console.log("---------------------------------------------------------10) print person age diatas 30------------------------------------------");
+
 for(let i = 0; i < person.length; i++){
     if (person[i].age > 30 ){
-        arr10.push(person[i])
+        console.table(person[i])
     }
 }
-console.log("No.10 print person age diatas 30 ada = " + arr10.length);
-console.table(arr10);
-
