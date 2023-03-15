@@ -392,6 +392,7 @@ console.table(hobbyId)
 // 5) display friends yang gender nya male dan mempunyai hobby basketball
 console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~5.) display friends yang gender nya male dan mempunyai hobby basketball ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`");
 
+//Cara 1
 let maleBasketball = person.flatMap(function(x1) {
     return x1.friends.filter(function(y1) {
         return y1.gender === "male" && y1.hobby.find(function(z1) {
@@ -404,6 +405,22 @@ console.table(maleBasketball)
 
 
 
+//Cara 2
+console.log("-------------No 5--------------")
+let filterFriends = person.map(x=>{
+  // console.log(x)
+  return x.friends.filter(function checkGender(y) {
+    // console.log(y)
+      if(y.gender==="male") {
+        return y.hobby.filter(function checkHoby(data) {
+          // console.log(hobby.hobby === "basketball")
+          return data.hobby === "basketball"
+        })
+      }
+  })
+})
+
+console.log(filterFriends)
 
 
 
