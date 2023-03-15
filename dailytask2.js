@@ -346,7 +346,7 @@ console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~2.) displa
 let bali = person.filter(function (a) {
     return a.address === "Bali";
 })
-console.table(bali);
+console.table(bali)
 
 
 
@@ -366,7 +366,7 @@ let football = person.flatMap(function(x) {
     })
   })
   
-  console.table(football);
+  console.table(football)
 
 
 
@@ -383,8 +383,7 @@ let hobbyId = person.flatMap (function(r) {
         return r2.id === 2
     })
 })
-console.table(hobbyId);
-
+console.table(hobbyId)
 
 
 
@@ -396,12 +395,12 @@ console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~5.) displa
 let maleBasketball = person.flatMap(function(x1) {
     return x1.friends.filter(function(y1) {
         return y1.gender === "male" && y1.hobby.find(function(z1) {
-            return z1.hobby === "basketball";
+            return z1.hobby === "basketball"
         });
     });
 });
 
-console.table(maleBasketball);
+console.table(maleBasketball)
 
 
 
@@ -410,15 +409,15 @@ console.table(maleBasketball);
 
 // 6) display friends yang isActive nya true dan gender nya female dan favorite fruit nya strawberry
 console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  6) display friends yang isActive nya true dan gender nya female dan favorite fruit nya strawberry ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`");
-let isActiveFemaleStrawberry = person.flatMap(function(x2) {
+let isActiveFemale = person.flatMap(function(x2) {
     return x2.friends.filter(function(y2) {
         return y2.gender === "female" && y2.isActive === true && y2.favoriteFruit === "strawberry" && y2.hobby.find(function(z2) {
-            return z2.hobby === "basketball";
+            return z2.hobby === "basketball"
         });
     });
 });
 
-console.table(isActiveFemaleStrawberry);
+console.table(isActiveFemale)
 
 
 
@@ -433,7 +432,7 @@ let there = person.filter(function (b) {
         return c.name === "Theresia"
     })
 })
-console.table(there);
+console.table(there)
 
 
 
