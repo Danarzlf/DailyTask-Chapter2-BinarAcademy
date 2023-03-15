@@ -326,9 +326,9 @@ let person =
 // 1) display/print person yang registered dibawah tahun 2022
 console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~1.) print person yang registered dibawah tahun 2022 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`");
 
-let under2022 = (person.filter(function(xx) {
+let under2022 = person.filter(function(xx) {
     return parseInt(xx.registered.substring(0, 4)) < 2022
-}))
+})
 
 console.table(under2022)
 //parseInt mengubah string menjadi integer
