@@ -384,7 +384,7 @@ function checkFootballHobby(y) {
   return y.hobby.find(z => checkHobby(z, "football"));
 }
 
-function filterFootballFans(data) {
+function footballFans(data) {
   let arr = [];
   for (let i = 0; i < data.length; i++) {
     let dataFriends = data[i].friends;
@@ -397,7 +397,7 @@ function filterFootballFans(data) {
   return arr
 }
 
-console.table(filterFootballFans(person))
+console.table(footballFans(person))
 
 
 
