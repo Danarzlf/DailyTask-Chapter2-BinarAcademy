@@ -459,10 +459,36 @@ console.table(there)
 // 8) display hobby id 1 dari friends yang isActive nya true
 console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 8.) display hobby id 1 dari friends yang isActive nya true ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`");
 
+let hobbyId1 = person.flatMap(function(x3) {
+  return x3.friends.filter(function(p3) {
+    return p3.isActive === true && p3.hobby.filter(function(z) {
+      return z.id === 1;
+    });
+  });
+});
+
+console.table(hobbyId1);
+
+
+
+
 
 
 // 9) display person yang eye color nya brown dan favorite fruit nya banana dan mempunyai teman hobby basketball
 console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  9) display person yang eye color nya brown dan favorite fruit nya banana dan mempunyai teman hobby basketball ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`");
+
+let personBrown = person.filter(function(q1) {
+    return q1.eyeColor === "brown" && q1.friends.filter(function(q2) {
+        return q2.favoriteFruit === "banana" && q2.hobby.find(function(q3){
+            return q3.hobby === "basketball"
+        })
+    })
+})
+
+console.table(personBrown);
+
+
+
 
 
 
@@ -470,7 +496,14 @@ console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  9) displ
 // 10) display person yang mempunyai friends gender male atau favorite fruit nya banana dan registered di tahun 2023
 console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  9) display person yang eye color nya brown dan favorite fruit nya banana dan mempunyai teman hobby basketball ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`");
 
+let friendsMale = person.filter(function(t1) {
+  return parseInt(t1.registered.substring(0, 4)) === 2023 && t1.friends.find(function(t2) {
+    return t2.gender === 'male' || t2.favoriteFruit === 'banana';
+      })
+  })
 
+
+console.table(friendsMale)
 
 
 
